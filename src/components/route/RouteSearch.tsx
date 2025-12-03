@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import SearchableSelect from '../ui/SearchableSelect';
 import { useSearchParams } from 'react-router-dom';
-import { MapPin, Search, Bus, ArrowRight } from 'lucide-react';
+import { MapPin, Search, Bus, ArrowRight, MessageSquare } from 'lucide-react';
 import { MOCK_ROUTES, SORTED_LOCATIONS, type BusRoute } from '../../data/mockRoutes';
+import ReviewModal from '../rating/ReviewModal';
+import BusRating from '../rating/BusRating';
 import { LOCATION_COORDINATES } from '../../data/locationCoordinates';
 import { getRoutePath } from '../../utils/routeService';
 
@@ -40,6 +42,7 @@ interface RouteSearchProps {
  * - Search routes from/to with location selectors
  * - Display direct and connecting routes
  * - View route on interactive map
+ * - Rate and review buses
  * @example
  * <RouteSearch onSelectRoute={(path, stops) => setRoute({ path, stops })} />
  */
@@ -50,6 +53,46 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
     const [hasSearched, setHasSearched] = useState(false);
     const [isLoadingPath, setIsLoadingPath] = useState(false);
+    const [selectedBusForReview, setSelectedBusForReview] = useState<{ id: string; name: string } | null>(null);
+    const [busRatings, setBusRatings] = useState<Record<string, { average: number; count: number }>>({});
+
+    useEffect(() => {
+        fetchRatings();
+    }, []);
+
+    /**
+     * Fetch bus ratings from backend
+     * @function fetchRatings
+     * @returns {Promise<void>} Loads ratings into busRatings state
+     */
+    const fetchRatings = async () => {
+        try {
+            const response = await fetch('http://localhost:3001/reviews');
+            const reviews = await response.json();
+
+            const ratings: Record<string, { total: number; count: number }> = {};
+
+            reviews.forEach((review: any) => {
+                if (!ratings[review.busId]) {
+                    ratings[review.busId] = { total: 0, count: 0 };
+                }
+                ratings[review.busId].total += review.rating;
+                ratings[review.busId].count += 1;
+            });
+
+            const processedRatings: Record<string, { average: number; count: number }> = {};
+            Object.keys(ratings).forEach(busId => {
+                processedRatings[busId] = {
+                    average: ratings[busId].total / ratings[busId].count,
+                    count: ratings[busId].count
+                };
+            });
+
+            setBusRatings(processedRatings);
+        } catch (error) {
+            console.error('Failed to fetch ratings', error);
+        }
+    };
 
     useEffect(() => {
         const fromParam = searchParams.get('from');
@@ -110,7 +153,7 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                 results.push({
                     type: 'direct',
                     routes: [route],
-                    totalStops: segmentStops.length
+                    totalStops: segmentStops.length,
                 });
             }
         }
@@ -278,7 +321,7 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                     {/* Bus route details */}
                                     {result.routes.map((route, rIndex) => (
                                         <div key={route.id} className={`${rIndex > 0 ? 'mt-6 pt-6 border-t border-slate-700 border-dashed' : ''}`}>
-                                            {/* Bus name, company */}
+                                            {/* Bus name, company, and rating */}
                                             <div className="flex justify-between items-start mb-3">
                                                 <div>
                                                     <h4 className="text-xl font-bold text-slate-100 flex items-center gap-2 group-hover:text-blue-400 transition-colors">
@@ -286,6 +329,23 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                                         {route.name}
                                                     </h4>
                                                     <p className="text-sm text-slate-400 font-medium ml-7">{route.company}</p>
+                                                    {/* Rating and review button */}
+                                                    <div className="ml-7 mt-1 flex items-center gap-2">
+                                                        <BusRating value={busRatings[route.id]?.average || 0} readonly size="sm" />
+                                                        <span className="text-xs text-slate-500">
+                                                            ({busRatings[route.id]?.count || 0} reviews)
+                                                        </span>
+                                                        <button
+                                                            onClick={(e) => {
+                                                                e.stopPropagation();
+                                                                setSelectedBusForReview({ id: route.id, name: route.name });
+                                                            }}
+                                                            className="text-xs bg-blue-600 text-white hover:bg-blue-700 font-medium flex items-center gap-1 ml-2 px-3 py-1.5 rounded-md transition-colors"
+                                                        >
+                                                            <MessageSquare className="h-3 w-3" />
+                                                            Rate & Review
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -321,6 +381,19 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                         </div>
                     )}
                 </div>
+            )}
+
+            {/* Review modal */}
+            {selectedBusForReview && (
+                <ReviewModal
+                    isOpen={!!selectedBusForReview}
+                    onClose={() => {
+                        setSelectedBusForReview(null);
+                        fetchRatings(); // Refresh ratings after closing modal
+                    }}
+                    busId={selectedBusForReview.id}
+                    busName={selectedBusForReview.name}
+                />
             )}
         </div>
     );
