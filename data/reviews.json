@@ -42,17 +42,17 @@
       "userId": "c584d6f1-e717-4dc7-8b33-5215063eb758",
       "userName": "Jon Jones",
       "rating": 4,
-      "comment": "Good buses.",
+      "comment": "Good buses",
       "date": "2025-11-30T21:11:40.872Z"
     },
     {
-      "id": "89636c42-d60c-4338-833d-015521b0fb69",
-      "busId": "bus-26",
+      "id": "5ceca6f9-7bbd-4f83-8f2a-ee314f4cc983",
+      "busId": "bus-97",
       "userId": "5d8d4bcf-1044-4a3b-b15e-2f8ce1980add",
       "userName": "Asif",
-      "rating": 5,
-      "comment": "nice experience",
-      "date": "2025-12-03T13:24:39.282Z"
+      "rating": 3,
+      "comment": "nice\n",
+      "date": "2025-12-03T17:35:41.379Z"
     }
   ]
 }
