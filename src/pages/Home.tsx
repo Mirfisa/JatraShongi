@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Search, Clock } from 'lucide-react';
+import { MapPin, Search, DollarSign, Clock } from 'lucide-react';
 import { SORTED_LOCATIONS } from '../data/mockRoutes';
 import SearchableSelect from '../components/ui/SearchableSelect';
 
@@ -114,6 +114,17 @@ const Home: React.FC = () => {
                             <h3 className="text-xl font-bold text-slate-100 mb-3">Accurate Routes</h3>
                             <p className="text-slate-400 leading-relaxed">
                                 Find the most efficient bus routes across Dhaka city with detailed stop information and real-time path visualization.
+                            </p>
+                        </div>
+
+                        {/* Feature 2 */}
+                        <div className="bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-green-900/20 transition-all duration-300 border border-slate-700 hover:-translate-y-1 group">
+                            <div className="bg-green-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-900/50 transition-colors border border-green-500/20">
+                                <DollarSign className="h-8 w-8 text-green-400" />
+                            </div>
+                            <h3 className="text-xl font-bold text-slate-100 mb-3">Transparent Fares</h3>
+                            <p className="text-slate-400 leading-relaxed">
+                                Know the official government-approved fare before you board. No more overcharging, bargaining, or confusion.
                             </p>
                         </div>
 

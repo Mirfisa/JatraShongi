@@ -8,6 +8,7 @@ export interface BusRoute {
   startLocation: string;
   endLocation: string;
   stops: string[];
+  fare: number;
   distance: number;
   serviceType: string;
   image?: string;
@@ -39,6 +40,12 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
   // Mock distance calculation: 1.2 km per stop
   const estimatedDistance = stops.length * 1.2;
 
+  // Fare calculation using rate per km and min fare
+  const ratePerKm = (bus as any).rate_per_km || 2.45;
+  const minFare = (bus as any).min_fare || 10;
+  const calculatedFare = estimatedDistance * ratePerKm;
+  const finalFare = Math.max(minFare, calculatedFare);
+
   // Generate path from stops using mock coordinates
   // Filter out stops that don't have coordinates defined
   const path: [number, number][] = stops
@@ -52,6 +59,7 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
     startLocation,
     endLocation,
     stops,
+    fare: Math.round(finalFare),
     distance: parseFloat(estimatedDistance.toFixed(1)),
     serviceType: bus.service_type,
     // image: bus.image, // data.json does not have image field currently

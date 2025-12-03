@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchableSelect from '../ui/SearchableSelect';
 import { useSearchParams } from 'react-router-dom';
-import { MapPin, Search, Bus, ArrowRight, ArrowUpDown, Map, MessageSquare } from 'lucide-react';
+import { MapPin, Search, Bus, DollarSign, ArrowRight, ArrowUpDown, Map, MessageSquare } from 'lucide-react';
 import { MOCK_ROUTES, SORTED_LOCATIONS, type BusRoute } from '../../data/mockRoutes';
 import ReviewModal from '../rating/ReviewModal';
 import BusRating from '../rating/BusRating';
@@ -14,6 +14,7 @@ import { getRoutePath, getRouteDistance } from '../../utils/routeService';
  * @property {'direct'|'connecting'} type - Whether route is direct or requires transfer
  * @property {BusRoute[]} routes - Bus routes involved
  * @property {string} [transferPoint] - Location of transfer if connecting route
+ * @property {number} totalFare - Total fare in Taka
  * @property {number} totalStops - Number of stops
  * @property {number} totalDistance - Distance in kilometers
  */
@@ -21,11 +22,12 @@ interface SearchResult {
     type: 'direct' | 'connecting';
     routes: BusRoute[];
     transferPoint?: string;
+    totalFare: number;
     totalStops: number;
     totalDistance: number;
 }
 
-type SortOption = 'stops';
+type SortOption = 'fare' | 'stops';
 
 /**
  * Props for RouteSearch component
@@ -44,7 +46,7 @@ interface RouteSearchProps {
  * @remarks
  * Features:
  * - Search routes from/to with location selectors
- * - Sort results by stops
+ * - Sort results by fare or stops
  * - Display direct and connecting routes
  * - View route on interactive map
  * - Rate and review buses
@@ -57,7 +59,7 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
     const [to, setTo] = useState(searchParams.get('to') || '');
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
     const [hasSearched, setHasSearched] = useState(false);
-    const [sortBy, setSortBy] = useState<SortOption>('stops');
+    const [sortBy, setSortBy] = useState<SortOption>('fare');
     const [isLoadingPath, setIsLoadingPath] = useState(false);
     const [selectedBusForReview, setSelectedBusForReview] = useState<{ id: string; name: string } | null>(null);
     const [busRatings, setBusRatings] = useState<Record<string, { average: number; count: number }>>({});
@@ -120,11 +122,13 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
     }, [sortBy]);
 
     /**
-     * Sort search results by distance.
+     * Sort search results by fare or distance.
      */
     const sortResults = (results: SearchResult[], sort: SortOption) => {
         return results.sort((a, b) => {
-            if (sort === 'stops') {
+            if (sort === 'fare') {
+                return a.totalFare - b.totalFare;
+            } else if (sort === 'stops') {
                 // Sort by distance (shortest distance first)
                 return a.totalDistance - b.totalDistance;
             }
@@ -197,9 +201,15 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                     distance = segmentStops.length * 1.2;
                 }
 
+                // Calculate fare
+                const ratePerKm = (route as any).rate_per_km || 2.45;
+                const minFare = 10;
+                const calculatedFare = Math.max(minFare, distance * ratePerKm);
+
                 results.push({
                     type: 'direct',
                     routes: [route],
+                    totalFare: Math.round(calculatedFare),
                     totalStops: segmentStops.length,
                     totalDistance: parseFloat(distance.toFixed(1))
                 });
@@ -345,6 +355,17 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                         {/* Sorting Controls */}
                         {searchResults.length > 0 && (
                             <div className="flex bg-slate-800 p-1 rounded-xl shadow-sm border border-slate-700">
+                                {/* Sort by cheapest */}
+                                <button
+                                    onClick={() => setSortBy('fare')}
+                                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all flex items-center gap-1.5 ${sortBy === 'fare'
+                                        ? 'bg-slate-700 text-blue-400 shadow-sm'
+                                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+                                        }`}
+                                >
+                                    <DollarSign className="h-4 w-4" />
+                                    Cheapest
+                                </button>
                                 {/* Sort by shortest distance */}
                                 <button
                                     onClick={() => setSortBy('stops')}
@@ -412,9 +433,13 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                                         </button>
                                                     </div>
                                                 </div>
-                                                {/* Distance info */}
+                                                {/* Fare and distance info */}
                                                 {rIndex === 0 && (
                                                     <div className="text-right">
+                                                        <div className="flex items-center justify-end gap-1 text-green-400 font-bold text-xl">
+                                                            <DollarSign className="h-5 w-5" />
+                                                            <span>{result.totalFare} Tk</span>
+                                                        </div>
                                                         <div className="flex items-center justify-end gap-4 text-slate-400 text-sm mt-1 font-medium">
                                                             <div className="flex items-center gap-1.5 bg-slate-700/50 px-2 py-1 rounded">
                                                                 <Map className="h-3.5 w-3.5" />

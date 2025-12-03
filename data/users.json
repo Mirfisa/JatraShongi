@@ -34,6 +34,13 @@
       "email": "mirmdasifabdullah@gmail.com",
       "password": "123456",
       "role": "user"
+    },
+    {
+      "id": "a1f195b4-eeeb-43d6-8736-5446bd8bdbcc",
+      "name": "bibak saha",
+      "email": "bibek@gmail.com",
+      "password": "11223344",
+      "role": "user"
     }
   ]
 }
