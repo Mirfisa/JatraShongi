@@ -1,0 +1,860 @@
+Bus: Achim Paribahan (আছিম পরিবহন)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: Active Paribahan (এক্টিভ পরিবহন)
+  Matches Route ID: A-301
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.40 (Overlap: 4 stops)
+
+Bus: Agradut (অগ্রদূত)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.86 (Overlap: 6 stops)
+
+Bus: Azmeri Glory Limited (আজমেরী গ্লোরী লিমিটেড)
+  Matches Route ID: A-265
+  Route Name: Jagannath University to Chandra
+  Match Score: 0.58 (Overlap: 7 stops)
+
+Bus: Ajmi (আজমী)
+  Matches Route ID: A-260
+  Route Name: Fulbaria Animal Hospital to Dhamrai
+  Match Score: 0.71 (Overlap: 5 stops)
+
+Bus: Akash (আকাশ)
+  Matches Route ID: A-240
+  Route Name: Kanchpur to Tongi Bastuhara
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Akik (আকিক)
+  No confident match found. Best score: 0.19
+  Closest: Chiriyakhana to Jatrabari (A-320)
+
+Bus: Al Makka (আল মক্কা)
+  Matches Route ID: A-245
+  Route Name: Madanpur to Abdullahpur
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: Al Madina Plus One (আল মনিদা প্লাস ওয়ান)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.79 (Overlap: 11 stops)
+
+Bus: Alif (আলিফ)
+  No confident match found. Best score: 0.25
+  Closest: Mirpur-14 to Nandan Park (A-333)
+
+Bus: Alif (আলিফ)
+  Matches Route ID: A-141
+  Route Name: Banasree to Mohammadpur Shia Mosque
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Alif (আলিফ)
+  Matches Route ID: A-141
+  Route Name: Banasree to Mohammadpur Shia Mosque
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Alif (আলিফ)
+  Matches Route ID: A-294
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.62 (Overlap: 5 stops)
+
+Bus: Anabil Super (অনাবিল সুপার)
+  Matches Route ID: A-243
+  Route Name: Dhaleshwar to Tongi (Bastuhara)
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Arnob (অরনব)
+  Matches Route ID: A-302
+  Route Name: Banasree (Meradia) to Savar
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: Ashirbad Pahibahan (আশীর্বাদ পরিবহন)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Ashulia Classic (আশুলিয়া ক্লাসিক)
+  Matches Route ID: A-368
+  Route Name: Signboard to Fantasy Kingdom
+  Match Score: 0.50 (Overlap: 9 stops)
+
+Bus: Asmani (আসমানী)
+  Matches Route ID: A-362
+  Route Name: Dhour to Madanpur
+  Match Score: 0.50 (Overlap: 6 stops)
+
+Bus: ATCL (এটিসিএল )
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.67 (Overlap: 4 stops)
+
+Bus: Ayat (আয়াত)
+  Matches Route ID: A-344
+  Route Name: Chiriyakhana to Ekuria
+  Match Score: 0.50 (Overlap: 8 stops)
+
+Bus: Bahon (বাহন)
+  Matches Route ID: A-224
+  Route Name: Fulbaria to Paturia
+  Match Score: 0.55 (Overlap: 6 stops)
+
+Bus: Baishakhi (বৈশাখী)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.86 (Overlap: 6 stops)
+
+Bus: Balaka (বলাকা)
+  Matches Route ID: A-368
+  Route Name: Signboard to Fantasy Kingdom
+  Match Score: 0.44 (Overlap: 8 stops)
+
+Bus: Basumati (বাসুমতি)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.64 (Overlap: 9 stops)
+
+Bus: Basumati Transport (বাসুমতি ট্রান্সপোর্ট)
+  Matches Route ID: A-257
+  Route Name: Kanchpur Bridge to Board Bazar
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: Best Satabdi (বেষ্ট শতাব্দী)
+  Matches Route ID: A-207
+  Route Name: Tongi (Cherag Ali) to Dhakeshwari
+  Match Score: 0.62 (Overlap: 5 stops)
+
+Bus: Best Transport (বেষ্ট ট্রান্সপোর্ট)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Bhuiyan Paribahan (ভূঁইয়া পরিবহন)
+  Matches Route ID: A-294
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.62 (Overlap: 5 stops)
+
+Bus: Bihanga (বিহঙ্গ)
+  Matches Route ID: A-141
+  Route Name: Banasree to Mohammadpur Shia Mosque
+  Match Score: 0.33 (Overlap: 2 stops)
+
+Bus: Bikalpa (বিকল্প অটো সুপার সার্ভিস)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.73 (Overlap: 8 stops)
+
+Bus: Bikalpa (বিকল্প সুপার সার্ভিস)
+  Matches Route ID: A-122
+  Route Name: Mirpur-12 (ECB Chattar) to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Bikash (বিকাশ)
+  Matches Route ID: A-341
+  Route Name: Azimpur to Dhour
+  Match Score: 0.62 (Overlap: 5 stops)
+
+Bus: Bikash Paribahan (বিকাশ পরিবহন)
+  Matches Route ID: A-341
+  Route Name: Azimpur to Dhour
+  Match Score: 0.75 (Overlap: 6 stops)
+
+Bus: Bondhu Paribahan (বন্ধু পরিবহন)
+  Matches Route ID: A-430
+  Route Name: Bhawar Viti to Diabari
+  Match Score: 0.33 (Overlap: 5 stops)
+
+Bus: Borak (বোরাক)
+  Matches Route ID: A-259
+  Route Name: Palashi to Meghna Ghat
+  Match Score: 0.40 (Overlap: 2 stops)
+
+Bus: Bashumoti (বসুমতি)
+  No confident match found. Best score: 0.30
+  Closest: Nabinagar to Dhour (A-365)
+
+Bus: Brihottor (বৃহত্তর মিরপুর)
+  Matches Route ID: A-302
+  Route Name: Banasree (Meradia) to Savar
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.93 (Overlap: 13 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-327
+  Route Name: Mirpur-14 to Motijheel
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-355
+  Route Name: Kuril Biswa Road to Azimpur
+  Match Score: 0.40 (Overlap: 4 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-327
+  Route Name: Mirpur-14 to Motijheel
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: BRTC (বি আর টিসি)
+  No confident match found. Best score: 0.14
+  Closest: Mohammadpur to Uttara House Building (A-166)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.44 (Overlap: 4 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: BRTC (বি আর টিসি)
+  Matches Route ID: A-257
+  Route Name: Kanchpur Bridge to Board Bazar
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: BRTC Articulated বি আর টিসি আরটিকুলেটেড)
+  Matches Route ID: A-327
+  Route Name: Mirpur-14 to Motijheel
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Cantonment (ক্যান্টনমেন্ট)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Cantonment Mini Service (ক্যান্টনমেন্ট মিনি সার্ভিস)
+  Matches Route ID: A-219
+  Route Name: Fulbaria to Kapasia
+  Match Score: 0.40 (Overlap: 2 stops)
+
+Bus: Champion (চ্যাম্পিয়ন)
+  No confident match found. Best score: 0.29
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: City Link (সিটি লিংক)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.67 (Overlap: 4 stops)
+
+Bus: D Link (ডি লিংক)
+  Matches Route ID: A-260
+  Route Name: Fulbaria Animal Hospital to Dhamrai
+  Match Score: 0.86 (Overlap: 6 stops)
+
+Bus: D One Transport (ডি ওয়ান)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.64 (Overlap: 9 stops)
+
+Bus: Desh Bangla (দেশ বাংলা)
+  Matches Route ID: A-243
+  Route Name: Dhaleshwar to Tongi (Bastuhara)
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Dewan (দেওয়ান)
+  Matches Route ID: A-355
+  Route Name: Kuril Biswa Road to Azimpur
+  Match Score: 0.80 (Overlap: 8 stops)
+
+Bus: Dhakar Chaka (ঢাকার চাকা)
+  No confident match found. Best score: 0.00
+
+Bus: Dhakar Chaka (ঢাকার চাকা)
+  Matches Route ID: A-278
+  Route Name: Mirpur-1 (Sony Cinema Hall) to Beraid
+  Match Score: 0.67 (Overlap: 2 stops)
+
+Bus: Dhaka Metro Service (ঢাকার মেট্রো সার্ভিস)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: Dhaka Paribahan (ঢাকা পরিবহন)
+  Matches Route ID: A-101
+  Route Name: Kalshi to Kanchpur Bridge
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Dipon (দিপন)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Dip Paribahan (দ্বীপ পরিবহন)
+  No confident match found. Best score: 0.25
+  Closest: Ghatarchar to Pagla Bazar (Up) (Piloting-3)
+
+Bus: Dishari (দিসারি)
+  Matches Route ID: A-285
+  Route Name: Chiriyakhana to Keraniganj (New Jail)
+  Match Score: 0.58 (Overlap: 7 stops)
+
+Bus: Elite (এলিট)
+  Matches Route ID: A-301
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.50 (Overlap: 5 stops)
+
+Bus: ETC (ইটিসি)
+  Matches Route ID: A-344
+  Route Name: Chiriyakhana to Ekuria
+  Match Score: 0.50 (Overlap: 5 stops)
+
+Bus: ETC Transport (ইটিসি ট্রান্সপোর্ট)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.45 (Overlap: 5 stops)
+
+Bus: Everest Paribahan (এভারেস্ট পরিবহন)
+  No confident match found. Best score: 0.29
+  Closest: Kalshi to Kanchpur Bridge (A-101)
+
+Bus: First Ten (ফার্স্ট টেন)
+  No confident match found. Best score: 0.29
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: FTCL (এফটিসিএল)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.67 (Overlap: 4 stops)
+
+Bus: FTCL (এফটিসিএল)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Gazipur Paribahan (গাজীপুর পরিবহন)
+  Matches Route ID: A-257
+  Route Name: Kanchpur Bridge to Board Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Grameen (গ্রামীণ)
+  No confident match found. Best score: 0.29
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: Grameen Suveccha (গ্রামীণ শুভেচ্ছা)
+  Matches Route ID: A-260
+  Route Name: Fulbaria Animal Hospital to Dhamrai
+  Match Score: 0.71 (Overlap: 5 stops)
+
+Bus: Green Anabil (গ্রীন অনাবিল)
+  Matches Route ID: A-236
+  Route Name: Sayedabad to Narayanganj
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Green Dhaka (গ্রীন ঢাকা)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.44 (Overlap: 4 stops)
+
+Bus: Gulshan Chaka (গুলশান চাকা)
+  Matches Route ID: A-278
+  Route Name: Mirpur-1 (Sony Cinema Hall) to Beraid
+  Match Score: 0.67 (Overlap: 2 stops)
+
+Bus: Hazi Transport (হাজি ট্রান্সপোর্ট)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.73 (Overlap: 8 stops)
+
+Bus: Himachal (হিমাচল)
+  No confident match found. Best score: 0.20
+  Closest: Kalshi to Kanchpur Bridge (A-101)
+
+Bus: Himachal Suveccha (হিমাচল শুভেচ্ছা)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Himalay (হিমালয়)
+  Matches Route ID: A-115
+  Route Name: Mirpur-1 (Baishakhi) to Jatrabari
+  Match Score: 0.33 (Overlap: 2 stops)
+
+Bus: Itihash (ইতিহাস)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: J M Super Paribahan (জে এম সুপার পরিবহন)
+  Matches Route ID: A-243
+  Route Name: Dhaleshwar to Tongi (Bastuhara)
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Jabale Noor Paribahan (জাবালে নুর পরিবহন)
+  Matches Route ID: A-301
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.50 (Overlap: 5 stops)
+
+Bus: Jabale Noor Paribahan (জাবালে নুর পরিবহন)
+  Matches Route ID: A-320
+  Route Name: Chiriyakhana to Jatrabari
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Janjabil (জানযাবিল)
+  No confident match found. Best score: 0.14
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: Kamal Plus Paribahan (কামাল প্লাস পরিবহন)
+  Matches Route ID: A-161
+  Route Name: Ghatarchar to Dhupkhola
+  Match Score: 0.58 (Overlap: 7 stops)
+
+Bus: kanak (কনক)
+  Matches Route ID: A-271
+  Route Name: Gabtoli to Gazipur
+  Match Score: 0.33 (Overlap: 3 stops)
+
+Bus: Khajababa (খাজা বাবা)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.55 (Overlap: 6 stops)
+
+Bus: Kironmala Paribahan (কিরণমালা)
+  No confident match found. Best score: 0.18
+  Closest: Chiriyakhana to Jatrabari (A-320)
+
+Bus: Labbayek(লাব্বাইক)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Lal Sabuj (লাল সবুজ)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.79 (Overlap: 11 stops)
+
+Bus: Lams Paribahan (লামস পরিবহন)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Malancha (মালঞ্চ)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Manjil Express (মাঞ্জিল এক্সপ্রেস)
+  Matches Route ID: A-236
+  Route Name: Sayedabad to Narayanganj
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Meghla Transport (মেঘলা ট্রান্সপোর্ট)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.83 (Overlap: 5 stops)
+
+Bus: Meshkat (মেসকাত)
+  Matches Route ID: A-236
+  Route Name: Sayedabad to Narayanganj
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Midline (মিডলাইন)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Mirpur Metro Services (মিরপুর মেট্রো সার্ভিস)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: Mirpur Link (মিরপুর লিংক)
+  Matches Route ID: A-459
+  Route Name: Manikdi (ECB Mor) to Azimpur
+  Match Score: 0.42 (Overlap: 5 stops)
+
+Bus: Mirpur Mission (মিরপুর মিশন)
+  Matches Route ID: A-331
+  Route Name: Nandan Park to Signboard
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Mirpur United Service (মিরপুর ইউনাইটেড সার্ভিস)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.45 (Overlap: 5 stops)
+
+Bus: MM Lovely (এম এম লাভলী)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Modhumita (মধুমিতা)
+  Matches Route ID: A-141
+  Route Name: Banasree to Mohammadpur Shia Mosque
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Mohona(মোহনা)
+  No confident match found. Best score: 0.12
+  Closest: Mirpur-14 to Nandan Park (A-333)
+
+Bus: Moitri (মৈত্রী)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Moumita (মৌমিতা)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: MTCL-2 (এমটিসিএল ২)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.67 (Overlap: 4 stops)
+
+Bus: Nur E Makka (নূর এ মক্কা )
+  Matches Route ID: A-320
+  Route Name: Chiriyakhana to Jatrabari
+  Match Score: 0.31 (Overlap: 5 stops)
+
+Bus: Nabakali (নবকালি)
+  Matches Route ID: A-224
+  Route Name: Fulbaria to Paturia
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: New Vision (নিউ ভিশন)
+  Matches Route ID: A-131
+  Route Name: Mirpur Chiriyakhana to Sadarghat
+  Match Score: 0.56 (Overlap: 5 stops)
+
+Bus: Nilachol (নিলাচল)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Nishorgo (নিসর্গ)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Omama International (ওমামা ইন্টারন্যাশনাল বাস)
+  Matches Route ID: A-132
+  Route Name: Baipayl to Keraniganj (New Jail)
+  Match Score: 0.44 (Overlap: 7 stops)
+
+Bus: One Transport (ওয়ান ট্রান্সপোর্ট)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.79 (Overlap: 11 stops)
+
+Bus: Pallabi Local Service (পল্লবী লোকাল সার্ভিস)
+  No confident match found. Best score: 0.29
+  Closest: Fulbaria Animal Hospital to Dhamrai (A-260)
+
+Bus: Pallabi Super (পল্লবী সুপার)
+  Matches Route ID: A-365
+  Route Name: Nabinagar to Dhour
+  Match Score: 0.38 (Overlap: 5 stops)
+
+Bus: Paristhan (পরিস্থান)
+  Matches Route ID: A-356
+  Route Name: Azimpur to Dhour
+  Match Score: 0.40 (Overlap: 6 stops)
+
+Bus: Power Paribahan (পাওয়ার পরিবহন)
+  No confident match found. Best score: 0.17
+  Closest: Kamrangirchar (Beribadh) to Konabari (A-422)
+
+Bus: Prattay (প্রত্যয়)
+  No confident match found. Best score: 0.14
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: Prochesta (প্রচেষ্টা)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.44 (Overlap: 4 stops)
+
+Bus: Projapati (প্রজাপতি)
+  Matches Route ID: A-356
+  Route Name: Azimpur to Dhour
+  Match Score: 0.47 (Overlap: 7 stops)
+
+Bus: Provati Banasree (প্রভাতী বনশ্রী)
+  Matches Route ID: A-220
+  Route Name: Fulbaria to Sreepur
+  Match Score: 0.57 (Overlap: 8 stops)
+
+Bus: Raida(রাইদা)
+  Matches Route ID: A-317
+  Route Name: Diabari to Postogola
+  Match Score: 0.42 (Overlap: 5 stops)
+
+Bus: Raja City (রাজা সিটি)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Rajanigandha (রজনীগন্ধা)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.67 (Overlap: 4 stops)
+
+Bus: Rajdhani Super (রাজধানী)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: Ramjan (রমজান)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 1.00 (Overlap: 7 stops)
+
+Bus: Robrob ( রবরব)
+  No confident match found. Best score: 0.30
+  Closest: Banasree (Meradia) to Savar (A-302)
+
+Bus: Rois (রাইস)
+  Matches Route ID: A-141
+  Route Name: Banasree to Mohammadpur Shia Mosque
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Rongdhonu Express (রংধনু এক্সপ্রেস)
+  Matches Route ID: A-160
+  Route Name: Mohammadpur (Japan Garden City) to Postogola
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: Runway Express (রানওয়ে এক্সপ্রেস)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.45 (Overlap: 5 stops)
+
+Bus: Rupa Paribahan (রুপা পরিবহন)
+  No confident match found. Best score: 0.29
+  Closest: Savar to Badda Notun Bazar (A-181)
+
+Bus: Rupkotha (রুপকথা)
+  Matches Route ID: A-271
+  Route Name: Gabtoli to Gazipur
+  Match Score: 0.33 (Overlap: 3 stops)
+
+Bus: Safety Druti (সেফটি দ্রুতি)
+  Matches Route ID: A-459
+  Route Name: Manikdi (ECB Mor) to Azimpur
+  Match Score: 0.42 (Overlap: 5 stops)
+
+Bus: Sakalpa Transport (স্বকল্প ট্রান্সপোর্ট)
+  Matches Route ID: A-344
+  Route Name: Chiriyakhana to Ekuria
+  Match Score: 0.50 (Overlap: 7 stops)
+
+Bus: Salsabil (ছালছাবিল)
+  Matches Route ID: A-243
+  Route Name: Dhaleshwar to Tongi (Bastuhara)
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Savar Paribahan (সাভার পরিবহন)
+  Matches Route ID: A-224
+  Route Name: Fulbaria to Paturia
+  Match Score: 0.73 (Overlap: 8 stops)
+
+Bus: Shadhin (স্বাধীন)
+  Matches Route ID: A-378
+  Route Name: Demra Staff Quarter to Bosila
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: Shadhin Express (স্বাধীন এক্সপ্রেস)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.45 (Overlap: 5 stops)
+
+Bus: Shahria Enterprise (শাহরিয়া এন্টারপ্রাইজ)
+  Matches Route ID: A-224
+  Route Name: Fulbaria to Paturia
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Shatabdi (শতাব্দি)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.67 (Overlap: 6 stops)
+
+Bus: Shikhor Paribahan (শিখর পরিবহন)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Shikhor Paribahan (শিখর পরিবহন)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Suveccha (শুভেচ্ছা)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Suvojatri (শুভযাত্রী)
+  Matches Route ID: A-224
+  Route Name: Fulbaria to Paturia
+  Match Score: 0.91 (Overlap: 10 stops)
+
+Bus: Siam Transport (সিয়াম ট্রান্সপোর্ট)
+  Matches Route ID: A-424
+  Route Name: Signboard to Dhour
+  Match Score: 0.47 (Overlap: 7 stops)
+
+Bus: Skyline (স্কাই লাইন)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.56 (Overlap: 5 stops)
+
+Bus: Somota Paribahan (সমতা পরিবহন)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Somoy (সময়)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.64 (Overlap: 7 stops)
+
+Bus: Somoy Niyantran (সময় নিয়ন্ত্রণ)
+  Matches Route ID: A-458
+  Route Name: Mirpur-12 to Motijheel
+  Match Score: 0.55 (Overlap: 6 stops)
+
+Bus: Super (সুপার)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.86 (Overlap: 6 stops)
+
+Bus: Supravat (সুপ্রভাত)
+  Matches Route ID: A-346
+  Route Name: Kamarpara to Notre Dame College
+  Match Score: 0.44 (Overlap: 4 stops)
+
+Bus: Swajan Paribahan (স্বজন পরিবহন)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.71 (Overlap: 10 stops)
+
+Bus: Talukdar (তালুকদার)
+  Matches Route ID: A-236
+  Route Name: Sayedabad to Narayanganj
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Tanjil Paribahan (তানজিল পরিবহন)
+  Matches Route ID: A-131
+  Route Name: Mirpur Chiriyakhana to Sadarghat
+  Match Score: 0.56 (Overlap: 5 stops)
+
+Bus: Taranga Plus (তরঙ্গ প্লাস)
+  Matches Route ID: A-157
+  Route Name: Banasree to Mohammadpur
+  Match Score: 1.00 (Overlap: 7 stops)
+
+Bus: Tetulia (তেতুলিয়া)
+  Matches Route ID: A-301
+  Route Name: Japan Garden City to Dhour
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Thikana (ঠিকানা)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Thikana Express (ঠিকানা এক্সপ্রেস)
+  Matches Route ID: A-127
+  Route Name: Mirpur Mazar Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: Titas (তিতাস)
+  Matches Route ID: A-181
+  Route Name: Savar to Badda Notun Bazar
+  Match Score: 0.33 (Overlap: 2 stops)
+
+Bus: Transilva (ট্রান্সিল্ভা)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.83 (Overlap: 5 stops)
+
+Bus: Trust Transport Services (ট্রাষ্ট ট্রান্সপোর্ট)
+  Matches Route ID: A-278
+  Route Name: Mirpur-1 (Sony Cinema Hall) to Beraid
+  Match Score: 0.33 (Overlap: 2 stops)
+
+Bus: Trust Transport Services (ট্রাষ্ট ট্রান্সপোর্ট)
+  Matches Route ID: A-280
+  Route Name: Mirpur DOHS to Motijheel
+  Match Score: 0.33 (Overlap: 3 stops)
+
+Bus: Trust Transport Services (ট্রাষ্ট ট্রান্সপোর্ট)
+  Matches Route ID: A-280
+  Route Name: Mirpur DOHS to Motijheel
+  Match Score: 0.44 (Overlap: 4 stops)
+
+Bus: Trust Transport Services (AC) (ট্রাষ্ট ট্রান্সপোর্ট)
+  No confident match found. Best score: 0.29
+  Closest: Mirpur (Chiriyakhana) to Keraniganj (A-264)
+
+Bus: Turag (গ্রেট তুরাগ)
+  Matches Route ID: A-243
+  Route Name: Dhaleshwar to Tongi (Bastuhara)
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: Victor Classic (ভিক্টর ক্লাসিক)
+  No confident match found. Best score: 0.29
+  Closest: Uttara (Raniganj) to Sadarghat (A-138)
+
+Bus: Victor Paribahan (ভিক্টর পরিবহন)
+  No confident match found. Best score: 0.29
+  Closest: Uttara (Raniganj) to Sadarghat (A-138)
+
+Bus: VIP 27 (ভিআইপি ২৭)
+  Matches Route ID: A-341
+  Route Name: Azimpur to Dhour
+  Match Score: 0.62 (Overlap: 5 stops)
+
+Bus: Welcome (ওয়েলকাম)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.79 (Overlap: 11 stops)
+
+Bus: Winner (উইনার)
+  Matches Route ID: A-355
+  Route Name: Kuril Biswa Road to Azimpur
+  Match Score: 0.60 (Overlap: 6 stops)
+
+Bus: 13 No. (১৩নং)
+  Matches Route ID: A-161
+  Route Name: Ghatarchar to Dhupkhola
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: 4 No. Alike (৪নং)
+  Matches Route ID: A-327
+  Route Name: Mirpur-14 to Motijheel
+  Match Score: 0.57 (Overlap: 4 stops)
+
+Bus: 6 No. (৬নং)
+  Matches Route ID: A-295
+  Route Name: Mirpur-12 to Mawa
+  Match Score: 0.43 (Overlap: 3 stops)
+
+Bus: 7 No. (৭নং)
+  Matches Route ID: A-309
+  Route Name: Sadarghat to EPZ
+  Match Score: 0.70 (Overlap: 7 stops)
+
+Bus: 8 No. (৮নং)
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.64 (Overlap: 9 stops)
+
+Bus: 9 No. (৯নং)
+  No confident match found. Best score: 0.27
+  Closest: Mirpur-1 (Baishakhi) to Jatrabari (A-115)
+
+Bus: Deepan (দিপান)
+  Matches Route ID: A-252
+  Route Name: Bhulta to Science Lab
+  Match Score: 0.50 (Overlap: 3 stops)
+
+Bus: BRTC (বি আর টিসি )
+  Matches Route ID: A-429
+  Route Name: Savar to Signboard
+  Match Score: 0.79 (Overlap: 11 stops)

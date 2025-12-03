@@ -1,15 +1,37 @@
-import { MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { MapPin, Search } from 'lucide-react';
+import { SORTED_LOCATIONS } from '../data/mockRoutes';
+import SearchableSelect from '../components/ui/SearchableSelect';
 
 /**
- * Home - Landing page with hero section
+ * Home - Landing page with hero section and route search
  * @component
- * @returns {JSX.Element} Home page with hero and feature card
+ * @returns {JSX.Element} Home page with search form and feature cards
  * @remarks
  * Features:
  * - Hero section with call-to-action
+ * - Route search form with location selectors
  * - Feature card (Accurate Routes)
  */
 const Home: React.FC = () => {
+    const navigate = useNavigate();
+    const [from, setFrom] = useState('');
+    const [to, setTo] = useState('');
+
+    /**
+     * Navigate to routes page with search parameters
+     * @function handleSearch
+     * @returns {void} Navigates to /routes with from/to query params
+     */
+    const handleSearch = () => {
+        if (from || to) {
+            navigate(`/routes?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`);
+        } else {
+            navigate('/routes');
+        }
+    };
+
     return (
         <div className="flex flex-col">
             {/* Hero Section */}
@@ -28,8 +50,48 @@ const Home: React.FC = () => {
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400" style={{ WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Travel Companion</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                        Navigate Dhaka with ease. Travel safely with JatraShongi.
+                        Navigate Dhaka with ease. Find the best bus routes and travel safely with JatraShongi.
                     </p>
+
+                    {/* Search form for finding routes */}
+                    <div className="bg-slate-800/50 rounded-2xl shadow-2xl shadow-blue-900/20 p-8 max-w-4xl mx-auto text-slate-200 border border-slate-700/50 overflow-visible">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* Pick starting location */}
+                            <div className="relative group z-10">
+                                <label className="block text-sm font-semibold text-slate-400 mb-2 text-left ml-1">From</label>
+                                <SearchableSelect
+                                    options={SORTED_LOCATIONS}
+                                    value={from}
+                                    onChange={setFrom}
+                                    placeholder="Select pickup location"
+                                    icon={<MapPin className="h-5 w-5 text-slate-400 group-hover:text-blue-500 transition-colors" />}
+                                />
+                            </div>
+
+                            {/* Pick destination */}
+                            <div className="relative group z-10">
+                                <label className="block text-sm font-semibold text-slate-400 mb-2 text-left ml-1">To</label>
+                                <SearchableSelect
+                                    options={SORTED_LOCATIONS}
+                                    value={to}
+                                    onChange={setTo}
+                                    placeholder="Select destination"
+                                    icon={<MapPin className="h-5 w-5 text-slate-400 group-hover:text-purple-500 transition-colors" />}
+                                />
+                            </div>
+
+                            {/* Search button */}
+                            <div className="flex items-end">
+                                <button
+                                    onClick={handleSearch}
+                                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3.5 px-6 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all shadow-md flex items-center justify-center gap-2 font-semibold text-lg active:scale-95"
+                                >
+                                    <Search className="h-5 w-5" />
+                                    Find Bus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -62,4 +124,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
