@@ -1,16 +1,80 @@
-# React + Vite
+# JatraShongi - Bus Route Assistance for Dhaka
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**JatraShongi** is a web-based application designed to help commuters in Dhaka city find bus routes, check fares, and get traffic updates.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Route Search**: Find bus routes between any two locations in Dhaka.
+- **Fare Calculator**: Check official government-approved fares to avoid overcharging.
+- **Traffic Updates**: View real-time traffic conditions.
+- **Bus Ratings**: Rate and review bus services.
+- **Emergency Assistance**: Quick access to emergency contacts (999).
+- **Bilingual Support**: (Planned) Support for both Bangla and English.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React (Vite)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository (if applicable) or navigate to the project directory.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the development server:
+```bash
+npm run dev
+```
+The app will be available at `http://localhost:5173`.
+
+### Building for Production
+
+Build the app for deployment:
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── auth/       # Authentication components (Login)
+│   ├── emergency/  # Emergency features
+│   ├── fare/       # Fare calculation components
+│   ├── layout/     # Layout components (Navbar, Footer)
+│   ├── rating/     # Rating components
+│   ├── route/      # Route search components
+│   ├── traffic/    # Traffic status components
+│   └── ui/         # Reusable UI components
+├── pages/          # Page components (Home, Login, Routes, etc.)
+├── assets/         # Static assets (images, icons)
+└── App.tsx         # Main application component with routing
+```
+
+## Contributing
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/amazing-feature`).
+3. Commit your changes (`git commit -m 'Add some amazing feature'`).
+4. Push to the branch (`git push origin feature/amazing-feature`).
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
