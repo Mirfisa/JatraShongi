@@ -8,6 +8,7 @@ export interface BusRoute {
   startLocation: string;
   endLocation: string;
   stops: string[];
+  distance: number;
   serviceType: string;
   image?: string;
   path: [number, number][];
@@ -35,6 +36,9 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
   const startLocation = stops[0] || '';
   const endLocation = stops[stops.length - 1] || '';
 
+  // Mock distance calculation: 1.2 km per stop
+  const estimatedDistance = stops.length * 1.2;
+
   // Generate path from stops using mock coordinates
   // Filter out stops that don't have coordinates defined
   const path: [number, number][] = stops
@@ -48,6 +52,7 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
     startLocation,
     endLocation,
     stops,
+    distance: parseFloat(estimatedDistance.toFixed(1)),
     serviceType: bus.service_type,
     // image: bus.image, // data.json does not have image field currently
     path

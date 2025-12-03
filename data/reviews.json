@@ -53,15 +53,6 @@
       "rating": 2,
       "comment": "very bad serice",
       "date": "2025-12-03T00:15:35.055Z"
-    },
-    {
-      "id": "4be6ae5b-2c49-4e81-b1d9-70affc594437",
-      "busId": "bus-7",
-      "userId": "5d8d4bcf-1044-4a3b-b15e-2f8ce1980add",
-      "userName": "Asif",
-      "rating": 2,
-      "comment": "faltu",
-      "date": "2025-12-03T14:22:32.484Z"
     }
   ]
 }

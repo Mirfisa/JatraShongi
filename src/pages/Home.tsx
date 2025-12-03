@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPin, Search } from 'lucide-react';
+import { MapPin, Search, Clock } from 'lucide-react';
 import { SORTED_LOCATIONS } from '../data/mockRoutes';
 import SearchableSelect from '../components/ui/SearchableSelect';
 
@@ -12,7 +12,7 @@ import SearchableSelect from '../components/ui/SearchableSelect';
  * Features:
  * - Hero section with call-to-action
  * - Route search form with location selectors
- * - Feature card (Accurate Routes)
+ * - Three feature cards (Accurate Routes, Transparent Fares, Save Time)
  */
 const Home: React.FC = () => {
     const navigate = useNavigate();
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                         <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400" style={{ WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Travel Companion</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                        Navigate Dhaka with ease. Find the best bus routes and travel safely with JatraShongi.
+                        Navigate Dhaka with ease. Find the best bus routes, check accurate fares, and travel safely with JatraShongi.
                     </p>
 
                     {/* Search form for finding routes */}
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                     {/* Section title and description */}
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">Why Choose JatraShongi?</h2>
-                        <p className="text-lg text-slate-400 max-w-2xl mx-auto">We make your daily commute easier and predictable.</p>
+                        <p className="text-lg text-slate-400 max-w-2xl mx-auto">We make your daily commute easier, predictable, and more transparent.</p>
                     </div>
 
                     {/* Three main features */}
@@ -114,6 +114,17 @@ const Home: React.FC = () => {
                             <h3 className="text-xl font-bold text-slate-100 mb-3">Accurate Routes</h3>
                             <p className="text-slate-400 leading-relaxed">
                                 Find the most efficient bus routes across Dhaka city with detailed stop information and real-time path visualization.
+                            </p>
+                        </div>
+
+                        {/* Feature 3 */}
+                        <div className="bg-slate-800 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300 border border-slate-700 hover:-translate-y-1 group">
+                            <div className="bg-purple-900/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-900/50 transition-colors border border-purple-500/20">
+                                <Clock className="h-8 w-8 text-purple-400" />
+                            </div>
+                            <h3 className="text-xl font-bold text-slate-100 mb-3">Save Time</h3>
+                            <p className="text-slate-400 leading-relaxed">
+                                Compare routes by estimated time and distance to reach your destination faster and avoid unnecessary delays.
                             </p>
                         </div>
                     </div>

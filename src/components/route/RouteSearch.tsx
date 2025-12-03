@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SearchableSelect from '../ui/SearchableSelect';
 import { useSearchParams } from 'react-router-dom';
-import { MapPin, Search, Bus, ArrowRight, MessageSquare } from 'lucide-react';
+import { MapPin, Search, Bus, ArrowRight, ArrowUpDown, Map, MessageSquare } from 'lucide-react';
 import { MOCK_ROUTES, SORTED_LOCATIONS, type BusRoute } from '../../data/mockRoutes';
 import ReviewModal from '../rating/ReviewModal';
 import BusRating from '../rating/BusRating';
 import { LOCATION_COORDINATES } from '../../data/locationCoordinates';
-import { getRoutePath } from '../../utils/routeService';
+import { getRoutePath, getRouteDistance } from '../../utils/routeService';
 
 /**
  * Search result for a route query
@@ -15,13 +15,17 @@ import { getRoutePath } from '../../utils/routeService';
  * @property {BusRoute[]} routes - Bus routes involved
  * @property {string} [transferPoint] - Location of transfer if connecting route
  * @property {number} totalStops - Number of stops
+ * @property {number} totalDistance - Distance in kilometers
  */
 interface SearchResult {
     type: 'direct' | 'connecting';
     routes: BusRoute[];
     transferPoint?: string;
     totalStops: number;
+    totalDistance: number;
 }
+
+type SortOption = 'stops';
 
 /**
  * Props for RouteSearch component
@@ -36,10 +40,11 @@ interface RouteSearchProps {
  * RouteSearch - Search and filter bus routes between locations
  * @component
  * @param {RouteSearchProps} props - Component props
- * @returns {JSX.Element} Search form, results grid
+ * @returns {JSX.Element} Search form, results grid, and sorting options
  * @remarks
  * Features:
  * - Search routes from/to with location selectors
+ * - Sort results by stops
  * - Display direct and connecting routes
  * - View route on interactive map
  * - Rate and review buses
@@ -52,6 +57,7 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
     const [to, setTo] = useState(searchParams.get('to') || '');
     const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
     const [hasSearched, setHasSearched] = useState(false);
+    const [sortBy, setSortBy] = useState<SortOption>('stops');
     const [isLoadingPath, setIsLoadingPath] = useState(false);
     const [selectedBusForReview, setSelectedBusForReview] = useState<{ id: string; name: string } | null>(null);
     const [busRatings, setBusRatings] = useState<Record<string, { average: number; count: number }>>({});
@@ -105,6 +111,27 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
         }
     }, [searchParams]);
 
+    // Re-sort results when sortBy changes
+    useEffect(() => {
+        if (searchResults.length > 0) {
+            const sorted = sortResults([...searchResults], sortBy);
+            setSearchResults(sorted);
+        }
+    }, [sortBy]);
+
+    /**
+     * Sort search results by distance.
+     */
+    const sortResults = (results: SearchResult[], sort: SortOption) => {
+        return results.sort((a, b) => {
+            if (sort === 'stops') {
+                // Sort by distance (shortest distance first)
+                return a.totalDistance - b.totalDistance;
+            }
+            return 0;
+        });
+    };
+
     const performSearch = async (searchFrom: string, searchTo: string) => {
         setHasSearched(true);
         setSearchResults([]);
@@ -150,15 +177,36 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                     segmentStops = route.stops.slice(endIndex, startIndex + 1).reverse();
                 }
 
+                // Get coordinates for the route
+                const segmentCoordinates = segmentStops
+                    .map(stop => LOCATION_COORDINATES[stop])
+                    .filter((coord): coord is [number, number] => coord !== undefined);
+
+                // Calculate distance using online service or estimate
+                let distance = 0;
+                if (segmentCoordinates.length >= 2) {
+                    try {
+                        distance = await getRouteDistance(segmentCoordinates);
+                    } catch (e) {
+                        console.error("Failed to fetch distance", e);
+                    }
+                }
+
+                // Fallback estimate if online failed
+                if (distance === 0) {
+                    distance = segmentStops.length * 1.2;
+                }
+
                 results.push({
                     type: 'direct',
                     routes: [route],
                     totalStops: segmentStops.length,
+                    totalDistance: parseFloat(distance.toFixed(1))
                 });
             }
         }
 
-        setSearchResults(results);
+        setSearchResults(sortResults(results, sortBy));
     };
 
     const handleSearch = (e: React.FormEvent) => {
@@ -288,11 +336,28 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
             {/* Search Results */}
             {hasSearched && (
                 <div className="space-y-6">
-                    {/* Result count */}
+                    {/* Result count and sort buttons */}
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                         <h3 className="text-lg font-bold text-slate-100">
                             {searchResults.length} Route Option{searchResults.length !== 1 && 's'} Found
                         </h3>
+
+                        {/* Sorting Controls */}
+                        {searchResults.length > 0 && (
+                            <div className="flex bg-slate-800 p-1 rounded-xl shadow-sm border border-slate-700">
+                                {/* Sort by shortest distance */}
+                                <button
+                                    onClick={() => setSortBy('stops')}
+                                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all flex items-center gap-1.5 ${sortBy === 'stops'
+                                        ? 'bg-slate-700 text-blue-400 shadow-sm'
+                                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+                                        }`}
+                                >
+                                    <ArrowUpDown className="h-4 w-4" />
+                                    Shortest
+                                </button>
+                            </div>
+                        )}
                     </div>
 
                     {searchResults.length > 0 ? (
@@ -347,6 +412,17 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                                         </button>
                                                     </div>
                                                 </div>
+                                                {/* Distance info */}
+                                                {rIndex === 0 && (
+                                                    <div className="text-right">
+                                                        <div className="flex items-center justify-end gap-4 text-slate-400 text-sm mt-1 font-medium">
+                                                            <div className="flex items-center gap-1.5 bg-slate-700/50 px-2 py-1 rounded">
+                                                                <Map className="h-3.5 w-3.5" />
+                                                                <span>{result.totalDistance} km</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
 
                                             {/* Route info card */}
