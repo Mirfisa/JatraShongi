@@ -1,0 +1,14 @@
+{
+  "entryPoints": ["src"],
+  "entryPointStrategy": "expand",
+  "out": "docs",
+  "theme": "default",
+  "readme": "README.md",
+  "name": "JatraShongi",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "includeVersion": true,
+  "hideGenerator": false,
+  "sort": ["source-order"],
+  "searchInComments": true
+}
