@@ -1,11 +1,12 @@
 import React from 'react';
+import RouteSearch from '../components/route/RouteSearch';
 
 /**
- * RoutesPage - Routes information page
+ * RoutesPage - Route search page
  * @component
- * @returns {JSX.Element} Routes page
+ * @returns {JSX.Element} Route search form
  * @remarks
- * Displays information about bus routes.
+ * Displays route search form for finding bus routes.
  */
 const RoutesPage: React.FC = () => {
     return (
@@ -13,11 +14,26 @@ const RoutesPage: React.FC = () => {
             {/* Page title */}
             <div className="mb-10">
                 <h1 className="text-3xl md:text-4xl font-extrabold text-slate-100 mb-3">Bus Routes</h1>
-                <p className="text-lg text-slate-400">Explore bus routes across Dhaka city.</p>
+                <p className="text-lg text-slate-400">Search and explore bus routes across Dhaka city.</p>
+            </div>
+
+            {/* Search form */}
+            <RouteSearch />
+
+            {/* Popular routes */}
+            <div className="mt-8 bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50">
+                <h3 className="text-lg font-bold text-slate-200 mb-3">Popular Routes</h3>
+                <ul className="space-y-2">
+                    {['Mirpur 10 to Motijheel', 'Uttara to Shahbag', 'Mohammadpur to Gulshan 1'].map((route, i) => (
+                        <li key={i} className="flex items-center gap-2 text-blue-400 font-medium">
+                            <span className="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                            {route}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
 };
 
 export default RoutesPage;
-
