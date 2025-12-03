@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "ae0a97f2-458f-4c98-a5a3-7237f7ea1e1c",
+      "name": "Test User 3",
+      "email": "test3@example.com",
+      "password": "password123",
+      "role": "user"
+    },
+    {
+      "id": "5d8d4bcf-1044-4a3b-b15e-2f8ce1980add",
+      "name": "Asif",
+      "email": "asif@gmail.com",
+      "password": "asdfgh",
+      "role": "user"
+    },
+    {
+      "id": "16e3da25-ad30-4d55-83ef-a0f425cc7b6e",
+      "name": "GGG",
+      "email": "gg@gmail.com",
+      "password": "asdfgh",
+      "role": "user"
+    },
+    {
+      "id": "c584d6f1-e717-4dc7-8b33-5215063eb758",
+      "name": "Jon Jones",
+      "email": "jon23@gmail.com",
+      "password": "jonjones",
+      "role": "user"
+    },
+    {
+      "id": "d970ac92-58a6-4bae-a603-756cf729067c",
+      "name": "Mir Md. Asif Abdullah ",
+      "email": "mirmdasifabdullah@gmail.com",
+      "password": "123456",
+      "role": "user"
+    }
+  ]
+}

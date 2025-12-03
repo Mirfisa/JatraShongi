@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Bus, Globe } from 'lucide-react';
+import { Menu, X, Bus, User, Globe } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 
 /**
- * Navbar - Navigation bar with branding and menu
+ * Navbar - Navigation bar with branding, menu, and user controls
  * @component
  * @returns {JSX.Element} Sticky navigation bar
  * @remarks
@@ -11,10 +12,12 @@ import { Menu, X, Bus, Globe } from 'lucide-react';
  * - JatraShongi logo and branding
  * - Navigation links (Home, Routes)
  * - Language selector (Bengali)
+ * - User menu (Hi, {name} + Logout OR Login button)
  * - Responsive: horizontal menu on desktop, hamburger menu on mobile
  */
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { user, logout } = useAuth();
 
     return (
         <nav className="bg-slate-900/80 backdrop-blur-xl border-b border-slate-700/50 sticky top-0 z-50 transition-all duration-300">
@@ -40,13 +43,30 @@ const Navbar: React.FC = () => {
                             Routes
                         </Link>
 
-                        {/* Language section */}
+                        {/* Language and user section */}
                         <div className="flex items-center gap-4 ml-4 pl-4 border-l border-slate-700">
                             {/* Language switcher */}
                             <button className="flex items-center gap-1 text-slate-400 hover:text-blue-400 transition-colors">
                                 <Globe className="h-4 w-4" />
                                 <span className="text-sm font-medium">BN</span>
                             </button>
+                            {/* User menu */}
+                            {user ? (
+                                <div className="flex items-center gap-3">
+                                    <span className="text-sm font-medium text-slate-300">Hi, {user.name}</span>
+                                    <button
+                                        onClick={logout}
+                                        className="text-sm font-medium text-red-400 hover:text-red-300 transition-colors"
+                                    >
+                                        Logout
+                                    </button>
+                                </div>
+                            ) : (
+                                <Link to="/login" className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all">
+                                    <User className="h-4 w-4" />
+                                    <span>Login</span>
+                                </Link>
+                            )}
                         </div>
                     </div>
 
@@ -75,7 +95,7 @@ const Navbar: React.FC = () => {
                             Routes
                         </Link>
 
-                        {/* Mobile language section */}
+                        {/* Mobile user section */}
                         <div className="border-t border-slate-700 pt-4 pb-3">
                             {/* Language switcher */}
                             <div className="flex items-center px-3">
@@ -83,6 +103,29 @@ const Navbar: React.FC = () => {
                                     <Globe className="h-4 w-4" />
                                     <span className="text-sm font-medium">BN</span>
                                 </button>
+                            </div>
+                            <div className="mt-3 px-2 space-y-1">
+                                {/* User menu - logged in or login button */}
+                                {user ? (
+                                    <>
+                                        <div className="px-3 py-2 text-base font-medium text-slate-300">
+                                            Hi, {user.name}
+                                        </div>
+                                        <button
+                                            onClick={() => {
+                                                logout();
+                                                setIsOpen(false);
+                                            }}
+                                            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-400 hover:text-red-300 hover:bg-slate-800/50"
+                                        >
+                                            Logout
+                                        </button>
+                                    </>
+                                ) : (
+                                    <Link to="/login" className="block px-3 py-2 rounded-md text-base font-medium text-blue-400 hover:text-blue-300 hover:bg-slate-800/50">
+                                        Login
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </div>

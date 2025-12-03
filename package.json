@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server --watch data/users.json --port 3000",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npm run dev"
+    "start": "concurrently \"npm run dev\" \"npm run server\""
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",

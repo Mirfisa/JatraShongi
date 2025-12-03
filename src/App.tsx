@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import RoutesPage from './pages/RoutesPage';
 
 import EmergencyButton from './components/emergency/EmergencyButton';
@@ -25,6 +26,7 @@ const NotFound = () => (
  * Routes configured:
  * - / → Home page
  * - /routes → Route search page
+ * - /login → Login/Register page
  * - /* → 404 Not Found page
  * Also renders EmergencyButton globally on all pages.
  */
@@ -35,6 +37,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="routes" element={<RoutesPage />} />
+          <Route path="login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
