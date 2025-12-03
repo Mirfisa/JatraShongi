@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchableSelect from '../ui/SearchableSelect';
 import { useSearchParams } from 'react-router-dom';
-import { MapPin, Search, Bus, DollarSign, ArrowRight, ArrowUpDown, Map, MessageSquare } from 'lucide-react';
+import { MapPin, Search, Bus, Clock, DollarSign, ArrowRight, ArrowUpDown, Map, MessageSquare } from 'lucide-react';
 import { MOCK_ROUTES, SORTED_LOCATIONS, type BusRoute } from '../../data/mockRoutes';
 import ReviewModal from '../rating/ReviewModal';
 import BusRating from '../rating/BusRating';
@@ -15,6 +15,8 @@ import { getRoutePath, getRouteDistance } from '../../utils/routeService';
  * @property {BusRoute[]} routes - Bus routes involved
  * @property {string} [transferPoint] - Location of transfer if connecting route
  * @property {number} totalFare - Total fare in Taka
+ * @property {string} totalTime - Formatted time duration string
+ * @property {number} totalDurationMinutes - Duration in minutes
  * @property {number} totalStops - Number of stops
  * @property {number} totalDistance - Distance in kilometers
  */
@@ -23,11 +25,13 @@ interface SearchResult {
     routes: BusRoute[];
     transferPoint?: string;
     totalFare: number;
+    totalTime: string;
+    totalDurationMinutes: number;
     totalStops: number;
     totalDistance: number;
 }
 
-type SortOption = 'fare' | 'stops';
+type SortOption = 'fare' | 'time' | 'stops';
 
 /**
  * Props for RouteSearch component
@@ -46,7 +50,7 @@ interface RouteSearchProps {
  * @remarks
  * Features:
  * - Search routes from/to with location selectors
- * - Sort results by fare or stops
+ * - Sort results by fare, time, or stops
  * - Display direct and connecting routes
  * - View route on interactive map
  * - Rate and review buses
@@ -122,12 +126,14 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
     }, [sortBy]);
 
     /**
-     * Sort search results by fare or distance.
+     * Sort search results by fare, time, or distance.
      */
     const sortResults = (results: SearchResult[], sort: SortOption) => {
         return results.sort((a, b) => {
             if (sort === 'fare') {
                 return a.totalFare - b.totalFare;
+            } else if (sort === 'time') {
+                return a.totalDurationMinutes - b.totalDurationMinutes;
             } else if (sort === 'stops') {
                 // Sort by distance (shortest distance first)
                 return a.totalDistance - b.totalDistance;
@@ -210,6 +216,8 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                     type: 'direct',
                     routes: [route],
                     totalFare: Math.round(calculatedFare),
+                    totalTime: `${Math.round(segmentStops.length * 5)} mins`,
+                    totalDurationMinutes: segmentStops.length * 5,
                     totalStops: segmentStops.length,
                     totalDistance: parseFloat(distance.toFixed(1))
                 });
@@ -366,6 +374,17 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                     <DollarSign className="h-4 w-4" />
                                     Cheapest
                                 </button>
+                                {/* Sort by fastest */}
+                                <button
+                                    onClick={() => setSortBy('time')}
+                                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all flex items-center gap-1.5 ${sortBy === 'time'
+                                        ? 'bg-slate-700 text-blue-400 shadow-sm'
+                                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+                                        }`}
+                                >
+                                    <Clock className="h-4 w-4" />
+                                    Fastest
+                                </button>
                                 {/* Sort by shortest distance */}
                                 <button
                                     onClick={() => setSortBy('stops')}
@@ -433,7 +452,7 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                                         </button>
                                                     </div>
                                                 </div>
-                                                {/* Fare and distance info */}
+                                                {/* Fare, time, and distance info */}
                                                 {rIndex === 0 && (
                                                     <div className="text-right">
                                                         <div className="flex items-center justify-end gap-1 text-green-400 font-bold text-xl">
@@ -441,6 +460,10 @@ const RouteSearch: React.FC<RouteSearchProps> = ({ onSelectRoute }) => {
                                                             <span>{result.totalFare} Tk</span>
                                                         </div>
                                                         <div className="flex items-center justify-end gap-4 text-slate-400 text-sm mt-1 font-medium">
+                                                            <div className="flex items-center gap-1.5 bg-slate-700/50 px-2 py-1 rounded">
+                                                                <Clock className="h-3.5 w-3.5" />
+                                                                <span>{result.totalTime}</span>
+                                                            </div>
                                                             <div className="flex items-center gap-1.5 bg-slate-700/50 px-2 py-1 rounded">
                                                                 <Map className="h-3.5 w-3.5" />
                                                                 <span>{result.totalDistance} km</span>

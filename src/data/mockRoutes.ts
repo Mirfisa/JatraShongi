@@ -9,6 +9,8 @@ export interface BusRoute {
   endLocation: string;
   stops: string[];
   fare: number;
+  time: string;
+  durationMinutes: number;
   distance: number;
   serviceType: string;
   image?: string;
@@ -20,7 +22,7 @@ const parseRouteStops = (routeString: string): string[] => {
   if (!routeString) return [];
   // Remove leading "- " if present
   const cleanString = routeString.trim().startsWith('-') ? routeString.trim().substring(1) : routeString;
-
+  
   return cleanString
     .split('-')
     .map(part => {
@@ -46,6 +48,15 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
   const calculatedFare = estimatedDistance * ratePerKm;
   const finalFare = Math.max(minFare, calculatedFare);
 
+  // Mock time calculation: 5 mins per stop
+  const estimatedTimeMinutes = stops.length * 5;
+  const hours = Math.floor(estimatedTimeMinutes / 60);
+  const minutes = estimatedTimeMinutes % 60;
+  // Use provided time or calculated fallback
+  const timeString = (bus.starting_time && bus.closing_time) 
+    ? `${bus.starting_time} - ${bus.closing_time}` 
+    : (hours > 0 ? `${hours} hr ${minutes} mins` : `${minutes} mins`);
+
   // Generate path from stops using mock coordinates
   // Filter out stops that don't have coordinates defined
   const path: [number, number][] = stops
@@ -55,11 +66,13 @@ export const MOCK_ROUTES: BusRoute[] = busData.map((bus, index) => {
   return {
     id: `bus-${index}`,
     name: bus.bus_name,
-    company: bus.bus_name,
+    company: bus.bus_name, 
     startLocation,
     endLocation,
     stops,
     fare: Math.round(finalFare),
+    time: timeString,
+    durationMinutes: estimatedTimeMinutes,
     distance: parseFloat(estimatedDistance.toFixed(1)),
     serviceType: bus.service_type,
     // image: bus.image, // data.json does not have image field currently
